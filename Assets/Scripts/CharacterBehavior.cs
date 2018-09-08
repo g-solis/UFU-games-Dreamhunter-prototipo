@@ -49,11 +49,16 @@ public class CharacterBehavior : MonoBehaviour {
         Vector2 mouseDirection = (Vector2)worldMousePosition - (Vector2)transform.position;
         mouseDirection = mouseDirection.normalized;
 
-        animator.SetFloat("MouseDirectionX",mouseDirection.x);
-        animator.SetFloat("MouseDirectionY",mouseDirection.y);
-        animator.SetBool("attaking",true);
         
-        var AttackPosition = transform.position + new Vector3(mouseDirection.x*2,mouseDirection.y*2.5f,0);
+        var angle = Vector2.Angle(mouseDirection,Vector2.right);
+        if(mouseDirection.y < 0 ) angle = 360 - angle;
+        if(angle%45 > 22.5) angle = angle + 45 - angle%45;
+        else angle = angle - angle%45;
+        
+        animator.SetFloat("MouseDirectionX",Mathf.Cos(angle*Mathf.PI/180)*2);
+        animator.SetFloat("MouseDirectionY",Mathf.Sin(angle*Mathf.PI/180)*2.5f);
+        animator.SetBool("attaking",true);
+        var AttackPosition = transform.position + new Vector3(Mathf.Cos(angle*Mathf.PI/180)*2,Mathf.Sin(angle*Mathf.PI/180)*2.5f,0);
         var atk = Instantiate(ObjAttack, AttackPosition, Quaternion.identity);
         Destroy(atk,AttackDuration);
 
