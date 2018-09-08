@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212219970762229126}
   - component: {fileID: 50931871949987508}
   - component: {fileID: 114977702995454686}
+  - component: {fileID: 95100363162057272}
   m_Layer: 0
   m_Name: personagem
   m_TagString: Untagged
@@ -62,6 +63,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &95100363162057272
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1444323562984814}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 51f20304cd33bbe47bc1822d2ec3f59a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114977702995454686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,6 +93,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  AttackDuration: 0
+  AttackCouldownTime: 0
+  ObjAttack: {fileID: 1353689313394854, guid: 8dc00a64cab5a7442b5fdd1ec03116dd, type: 2}
 --- !u!212 &212219970762229126
 SpriteRenderer:
   m_ObjectHideFlags: 1

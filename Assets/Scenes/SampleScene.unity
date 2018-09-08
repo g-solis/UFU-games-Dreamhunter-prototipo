@@ -229,6 +229,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 50931871949987508, guid: 11a0a585f4746be48a7785562c98217c,
+        type: 2}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977702995454686, guid: 11a0a585f4746be48a7785562c98217c,
+        type: 2}
+      propertyPath: AttackDuration
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977702995454686, guid: 11a0a585f4746be48a7785562c98217c,
+        type: 2}
+      propertyPath: AttackCouldownTime
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11a0a585f4746be48a7785562c98217c, type: 2}
   m_IsPrefabAsset: 0
