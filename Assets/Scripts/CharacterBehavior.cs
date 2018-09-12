@@ -6,7 +6,7 @@ public class CharacterBehavior : MonoBehaviour {
     public float speed;
     public float AttackDuration;
     public float AttackCouldownTime;
-    public Object ObjAttack;
+    public int Damage;
     private Rigidbody2D rb;
     private SpriteRenderer sprRenderer;
     private Vector2 Direction;
@@ -20,11 +20,11 @@ public class CharacterBehavior : MonoBehaviour {
         this.Direction = new Vector2(0, 1);
         this.animator = GetComponent<Animator>();
     }
-	
+
 	// Update is called once per frame
 	void Update () {
         if(this.IsAttaking == false){
-            this.Move();  
+            this.Move();
         } else{
             this.rb.velocity = 0*this.rb.velocity;
         }
@@ -34,7 +34,7 @@ public class CharacterBehavior : MonoBehaviour {
         }
 
 	}
-    
+
     void Move()
     {
         int DirectionY = (int)Input.GetAxisRaw("Vertical");
@@ -49,17 +49,18 @@ public class CharacterBehavior : MonoBehaviour {
         Vector2 mouseDirection = (Vector2)worldMousePosition - (Vector2)transform.position;
         mouseDirection = mouseDirection.normalized;
 
-        
+
         var angle = Vector2.Angle(mouseDirection,Vector2.right);
         if(mouseDirection.y < 0 ) angle = 360 - angle;
         if(angle%45 > 22.5) angle = angle + 45 - angle%45;
         else angle = angle - angle%45;
-        
+
         animator.SetFloat("MouseDirectionX",Mathf.Cos(angle*Mathf.PI/180)*2);
         animator.SetFloat("MouseDirectionY",Mathf.Sin(angle*Mathf.PI/180)*2.5f);
         animator.SetBool("attaking",true);
         var AttackPosition = transform.position + new Vector3(Mathf.Cos(angle*Mathf.PI/180)*2,Mathf.Sin(angle*Mathf.PI/180)*2.5f,0);
-        var atk = Instantiate(ObjAttack, AttackPosition, Quaternion.identity);
+        GameObject atk = (GameObject)Instantiate(Resources.Load("attack"), AttackPosition, Quaternion.identity);
+        atk.GetComponent<PlayerAttackBehavior>().Damage = Damage;
         Destroy(atk,AttackDuration);
 
         this.IsAttaking = true;

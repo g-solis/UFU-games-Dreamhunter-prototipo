@@ -7,7 +7,6 @@ public class BossBehavior : MonoBehaviour {
 	private Vector2 Direction_to_player;
 	private GameObject Player;
 	private float ActualAttackCooldown;
-	private float Distance;
 	public float BurstCooldown;
 	public float ShotgunCooldown;
 	public int Damage;
@@ -26,9 +25,8 @@ public class BossBehavior : MonoBehaviour {
 		if(Player != null){
 			Direction_to_player.x = Player.transform.position.x - this.transform.position.x;
 			Direction_to_player.y = Player.transform.position.y - this.transform.position.y;
-			Distance = Mathf.Sqrt(Mathf.Pow(Direction_to_player.x,2) + Mathf.Pow(Direction_to_player.y,2));
-			if (ActualAttackCooldown <= 0 && Distance < 20) {
-				if(Distance > 6){
+			if (ActualAttackCooldown <= 0 && Vector2.Distance(Player.transform.position,this.transform.position) < 20) {
+				if(Vector2.Distance(Player.transform.position,this.transform.position) > 6){
 					StartCoroutine(BurstAttack());//Se a distancia entre o jogador e o boss for menor que 6,
 				} else {//                        ele faz o ataque em shotgun, se for maior ou igual, faz o ataque em burst.
 					ShotgunAttack();

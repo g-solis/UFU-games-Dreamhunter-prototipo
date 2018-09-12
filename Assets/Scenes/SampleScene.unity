@@ -167,6 +167,10 @@ Prefab:
       propertyPath: ShotgunCooldown
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1149850213478646, guid: 947c2438fe700aa4f82afafa45e2bd37, type: 2}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 947c2438fe700aa4f82afafa45e2bd37, type: 2}
   m_IsPrefabAsset: 0
@@ -285,6 +289,11 @@ Prefab:
     - target: {fileID: 4564927259006028, guid: 11a0a585f4746be48a7785562c98217c, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114600844875027794, guid: 11a0a585f4746be48a7785562c98217c,
+        type: 2}
+      propertyPath: Damage
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11a0a585f4746be48a7785562c98217c, type: 2}
