@@ -8,7 +8,6 @@ public class PlayerAttackBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 	}
 
 	// Update is called once per frame
@@ -17,6 +16,7 @@ public class PlayerAttackBehavior : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
+
 		if (other.tag == "Boss"){
 			other.GetComponent<HealthBehavior>().ReceiveDMG(Damage);
 		}
