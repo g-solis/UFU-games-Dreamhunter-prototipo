@@ -11,11 +11,14 @@ public class ProjectileBehavior : MonoBehaviour {
 	public float lifetime;
     //som de hit
     AudioSource audioSource;
+	private IEnumerator LifetimeCoroutine;
 
     // Use this for initialization
     void Start () {
 		this.transform.position += new Vector3(0,0,-5);
         audioSource = GetComponent<AudioSource>();
+		this.LifetimeCoroutine = Lifetime();
+		StartCoroutine(this.LifetimeCoroutine);
 	}
 
 	// Update is called once per frame
@@ -27,9 +30,10 @@ public class ProjectileBehavior : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (targets.Contains (other.tag)) {
 			other.GetComponent<HealthBehavior> ().ReceiveDMG (damage);
+			StopCoroutine(this.LifetimeCoroutine);
 			Destroy (gameObject);
 		}
-        audioSource.Play(0);
+        else audioSource.Play(0);
 	}
 
 	public IEnumerator Lifetime(){

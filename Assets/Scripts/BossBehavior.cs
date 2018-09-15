@@ -79,7 +79,6 @@ public class BossBehavior : MonoBehaviour {
 				angulo = (angulo-10)*Mathf.PI/180;
 				p.GetComponent<ProjectileBehavior>().direction = new Vector2(Mathf.Sin(angulo),Mathf.Cos(angulo));
 			}
-			StartCoroutine(p.GetComponent<ProjectileBehavior>().Lifetime());
 		}
 	}
 }

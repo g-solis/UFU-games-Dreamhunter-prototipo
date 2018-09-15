@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 50110277901939570}
   m_Layer: 0
   m_Name: boss_teste
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1922c641fd4cd2e4482ba7793dce8065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackCooldown: 5
+  BurstCooldown: 0
+  ShotgunCooldown: 0
   Damage: 2
   ProjectileVelocity: 0.1
 --- !u!212 &212571064371238610
@@ -148,6 +149,6 @@ SpriteRenderer:
   m_Size: {x: 3.19, y: 3.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
