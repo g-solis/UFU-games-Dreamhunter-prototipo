@@ -163,8 +163,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   AttackDuration: 0.7
-  AttackCouldownTime: 0.5
+  AttackCooldownTime: 0
   ObjAttack: {fileID: 1353689313394854, guid: 8dc00a64cab5a7442b5fdd1ec03116dd, type: 2}
+  RollMinSpeed: 5
+  RollMaxSpeed: 15
+  RollTime: 0.4
+  RollCooldownTime: 1
   impact: {fileID: 0}
 --- !u!114 &114617732907527560
 MonoBehaviour:
